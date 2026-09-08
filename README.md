@@ -44,5 +44,5 @@
 - Примеры конфигураций в форматах JSON и YAML.
 - Коллекция API-запросов документирована в Postman (ссылка ниже).
 
-🔗 [Документация API в Postman](https://www.getpostman.com/collections/31083045/2sBYAxQVXH)
+🔗 [Документация API в Postman](https://documenter.getpostman.com/view/31083045/2sBYAxQVXH)
 
