@@ -36,3 +36,13 @@
 
 # \- Git
 
+# repo1
+
+Пример репозитория с базовой настройкой Git.
+
+- Настроен `.gitignore` для исключения временных файлов и `node_modules`.
+- Примеры конфигураций в форматах JSON и YAML.
+- Коллекция API-запросов документирована в Postman (ссылка ниже).
+
+🔗 [Документация API в Postman](https://www.getpostman.com/collections/31083045/2sBYAxQVXH)
+
