@@ -1,0 +1,108 @@
+openapi: 3.0.3
+info:
+  title: QA_PetProject_JSONPlaceholder
+  description: API specification converted from Postman Collection.
+  version: 1.0.0
+servers:
+  - url: https://api.example.com
+tags:
+  - name: Default
+paths:
+  /posts:
+    get:
+      tags:
+        - Default
+      summary: Validate _limit query parameter returns correct number of items
+      parameters:
+        - name: _limit
+          in: query
+          schema:
+            type: string
+          example: "5"
+      responses:
+        "200":
+          description: Successful response
+    post:
+      tags:
+        - Default
+      summary: Verify POST /posts creates a new record (simulation)
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                body:
+                  type: string
+                userId:
+                  type: string
+            example:
+              title: naruto
+              body: Nothing in the POST body
+              userId: "100"
+      responses:
+        "200":
+          description: Successful response
+  /posts/1:
+    get:
+      tags:
+        - Default
+      summary: Validate JSON response structure and required fields for single post
+      responses:
+        "200":
+          description: Successful response
+    put:
+      tags:
+        - Default
+      summary: "TC-POSTS-05: Verify full update of a post via PUT /posts/{id}"
+      responses:
+        "200":
+          description: Successful response
+    delete:
+      tags:
+        - Default
+      summary: "TC-POSTS-06: Verify deletion of a post via DELETE /posts/{id}"
+      responses:
+        "200":
+          description: Successful response
+    patch:
+      tags:
+        - Default
+      summary: "TC-POSTS-07: Demonstrate PATCH (partial update) understanding (API
+        does not support it)"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+            example:
+              title: only title is updated via PATCH
+      responses:
+        "200":
+          description: Successful response
+  /posts/999999:
+    get:
+      tags:
+        - Default
+      summary: Verify correct handling of non-existent resource (404 Not Found)
+      responses:
+        "200":
+          description: Successful response
